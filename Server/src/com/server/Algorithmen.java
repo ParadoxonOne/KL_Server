@@ -1,4 +1,4 @@
-package com.server;//huehue
+package com.server;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
