@@ -1,6 +1,6 @@
 package com.server;
 
-import com.esotericsoftware.kryonet.Connection;
+//import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
 
 public class NetServer extends Listener {
