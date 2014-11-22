@@ -8,10 +8,9 @@ public class NetServer extends Listener {
 	static sql_interaktion SQLSERVER;
 	static Network_Server NetServer;
 	static Algorithmen alg = new Algorithmen();
-
+//commit
 	public static void main(String[] args) throws Exception {
 		SQLSERVER = new sql_interaktion();
-		System.out.println("deine mum");
 		if (SQLSERVER.start() == 1)
 			System.exit(0);
 		else

@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.esotericsoftware.kryonet.Connection;
-
+//Commits
 public class Algorithmen {
 
 	public void Registration(sql_interaktion SQLServer, Connection c, Object p) {
