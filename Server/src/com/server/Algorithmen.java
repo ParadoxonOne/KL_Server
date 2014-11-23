@@ -5,9 +5,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.esotericsoftware.kryonet.Connection;
-//Commits
-public class Algorithmen {
 
+public class Algorithmen {
 	public void Registration(sql_interaktion SQLServer, Connection c, Object p) {
 		System.out.println("Registrationspacket kam erfolgreich an");
 		int cUser = 0, cEmail = 0;
@@ -57,6 +56,38 @@ public class Algorithmen {
 		} catch (SQLException e) {
 			System.out.println("Fehler undso : " + e.toString());
 		}
+	}
+	public Login Connected(Network_Server NetServer,sql_interaktion SQLServer,Connection c,Object p)
+	{
+		System.out.println("Client versucht zu verbinden");
+		Login packet = (Login) p;
+		Statement stm;
+		try {
+			stm = SQLServer.conn.createStatement();
+
+			ResultSet rs = stm
+					.executeQuery("SELECT id FROM benutzer "
+							+ "	WHERE benutzername='" + packet.benutzername + "' " +  "AND WHERE password='" + packet.passwort);
+
+			if (rs.next()) {
+				System.out.println("User vorhanden");
+				int id = rs.getInt("id");
+				packet.id = id;
+				return packet;
+			}
+			else
+			{
+				System.out.println("User nicht vorhanden/Falsche Eingabe");
+				packet=null;
+				return packet;
+			}
+
+		} catch (SQLException e) {
+			System.out.println("Fehler : " + e.toString());
+		}
+		
+		packet = null;
+		return packet;
 	}
 
 }

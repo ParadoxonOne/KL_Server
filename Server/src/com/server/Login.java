@@ -1,8 +1,8 @@
 package com.server;
 
 public class Login {
+	int id;
 	String benutzername;
 	String passwort;
-	boolean acc_avaiable;
-	public int x;
+	public int Serverflag;
 }
