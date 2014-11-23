@@ -8,13 +8,17 @@ public class NetServer extends Listener {
 	static sql_interaktion SQLSERVER;
 	static Network_Server NetServer;
 	static Algorithmen alg = new Algorithmen();
-//commit
+	static Logger SLogger = new Logger("C:\\Logger");
+	
 	public static void main(String[] args) throws Exception {
+		SLogger.Info("Starten der Anwendung.");
 		SQLSERVER = new sql_interaktion();
 		if (SQLSERVER.start() == 1)
 			System.exit(0);
 		else
+			SLogger.Info("SQL Server erfolgreich gestartet.");
 			NetServer = new Network_Server();
+			SLogger.Info("Netzwerkserver erfolgreich gestartet.");
 
 	}
 
