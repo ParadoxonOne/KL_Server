@@ -19,13 +19,13 @@ public class NetServer extends Listener {
 			SLogger.Info("SQL Server erfolgreich gestartet.");
 			NetServer = new Network_Server();
 			SLogger.Info("Netzwerkserver erfolgreich gestartet.");
+			Thread.sleep(5000);
+			SLogger.Info("Netzwerkserver erfolgreich gestartet.");
 
 	}
 
 	public void connected(Connection c) {
-		Login Lr = new Login();
-		Lr.x = 1;
-		c.sendTCP(Lr);
+		//Überarbeiten
 	}
 
 	public void received(Connection c, Object p) {

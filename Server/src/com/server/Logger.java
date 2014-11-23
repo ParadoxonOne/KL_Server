@@ -19,7 +19,7 @@ public class Logger {
 		try {
 				time = new java.util.Date();
 				sdf = new java.text.SimpleDateFormat("dd.MM.yyyy HH.mm.ss");
-				Logstream = new FileOutputStream (pfad+ "\\Logger.txt");
+				Logstream = new FileOutputStream (pfad+ "\\Logger.txt",true);
 				Writestream = new DataOutputStream(Logstream);
 				
 		} catch (FileNotFoundException e) {
@@ -30,6 +30,7 @@ public class Logger {
 	{
 		
 		try {
+			time = new java.util.Date();
 			Writestream.writeBytes("[" +  sdf.format(time) + "] "  +  "[ERROR] : " + Meldung  + "\r\n");
 		} catch (IOException e) {
 		}
@@ -37,7 +38,7 @@ public class Logger {
 	
 	public void Info(String Meldung){
 		try {
-			sdf = new java.text.SimpleDateFormat("dd.MM.yyyy HH.mm.ss");
+			time = new java.util.Date();
 			Writestream.writeBytes("[" + sdf.format(time) + "] "  +  "[INFO] : " + Meldung + "\r\n");
 		} catch (IOException e) {
 		}
@@ -45,7 +46,7 @@ public class Logger {
 	
 	public void Debug(String Meldung){
 		try {
-			
+			time = new java.util.Date();
 			Writestream.writeBytes("[" + sdf.format(time) + "] "  +  "[DEBUG] : " + Meldung + "\r\n");
 		} catch (IOException e) {
 		}
