@@ -3,7 +3,8 @@ package com.server;
 import java.sql.*;
 
 public class sql_interaktion {
-	String DB_URL="jdbc:postgresql://77.182.111.99:5432/User";
+	String DNS_URL = "Whispserver.twilightparadox.com";
+	String DB_URL="jdbc:postgresql://"+DNS_URL+":5432/postgres";
 	
 	String USER = "postgres";
 	String PASS = "postgres";

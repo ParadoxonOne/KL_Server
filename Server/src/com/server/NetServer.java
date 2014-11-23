@@ -11,7 +11,7 @@ public class NetServer extends Listener {
 	static Logger SLogger = new Logger("C:\\Logger");
 	
 	public static void main(String[] args) throws Exception {
-		SLogger.Info("Starten der Anwendung.");
+		SLogger.Info("Anwendung wird gestartet.");
 		SQLSERVER = new sql_interaktion();
 		if (SQLSERVER.start() == 1)
 			System.exit(0);

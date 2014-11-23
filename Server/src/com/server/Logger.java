@@ -30,7 +30,7 @@ public class Logger {
 	{
 		
 		try {
-			Writestream.writeBytes("[" +  sdf.format(time) + "] "  +  "[ERROR] : " + Meldung);
+			Writestream.writeBytes("[" +  sdf.format(time) + "] "  +  "[ERROR] : " + Meldung  + "\r\n");
 		} catch (IOException e) {
 		}
 	}
@@ -38,7 +38,7 @@ public class Logger {
 	public void Info(String Meldung){
 		try {
 			sdf = new java.text.SimpleDateFormat("dd.MM.yyyy HH.mm.ss");
-			Writestream.writeBytes("[" + sdf.format(time) + "] "  +  "[INFO] : " + Meldung);
+			Writestream.writeBytes("[" + sdf.format(time) + "] "  +  "[INFO] : " + Meldung + "\r\n");
 		} catch (IOException e) {
 		}
 	}
@@ -46,7 +46,7 @@ public class Logger {
 	public void Debug(String Meldung){
 		try {
 			
-			Writestream.writeBytes("[" + sdf.format(time) + "] "  +  "[DEBUG] : " + Meldung);
+			Writestream.writeBytes("[" + sdf.format(time) + "] "  +  "[DEBUG] : " + Meldung + "\r\n");
 		} catch (IOException e) {
 		}
 	}
